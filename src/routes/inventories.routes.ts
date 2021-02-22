@@ -16,7 +16,6 @@ inventoriesRouter.post('/', (request, response) => {
     date,
   };
   inventories.push(inventory);
-
   return response.json(inventory);
 });
 
