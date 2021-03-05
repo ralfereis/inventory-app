@@ -1,28 +1,21 @@
-import { uuid } from 'uuidv4';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity('inventories')
 class Inventory {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  type: string;
+  @Column()
+  acronym_sector: string;
 
-  location: string;
+  @Column()
+  tag: string;
 
-  conservationStatus: string;
+  @Column()
+  state_of_conservation: string;
 
-  date: Date;
-
-  constructor(
-    type: string,
-    location: string,
-    conservationStatus: string,
-    date: Date,
-  ) {
-    this.id = uuid();
-    this.type = type;
-    this.location = location;
-    this.conservationStatus = conservationStatus;
-    this.date = date;
-  }
+  @Column('timestamp with time zone')
+  created_at: Date;
 }
 
 export default Inventory;

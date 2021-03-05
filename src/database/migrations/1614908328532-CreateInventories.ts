@@ -15,16 +15,15 @@ export default class CreateInventories1614908328532
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'acronym',
+            name: 'acronym_sector',
             type: 'varchar',
             isNullable: false,
             length: '6',
           },
           {
             name: 'tag',
-            type: 'varchar',
+            type: 'jsonb',
             isNullable: false,
-            length: '13',
           },
           {
             name: 'state_of_conservation',
@@ -34,7 +33,7 @@ export default class CreateInventories1614908328532
           },
           {
             name: 'created_at',
-            type: 'timestamp',
+            type: 'timestamp with time zone',
             default: 'now()',
           },
         ],
