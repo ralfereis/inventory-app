@@ -21,15 +21,8 @@ export default class CreateInventories1614908328532
             length: '6',
           },
           {
-            name: 'tag',
+            name: 'movable',
             type: 'jsonb',
-            isNullable: false,
-          },
-          {
-            name: 'state_of_conservation',
-            type: 'varchar',
-            length: '7',
-            isNullable: false,
           },
           {
             name: 'created_at',

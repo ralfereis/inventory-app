@@ -8,11 +8,13 @@ class Inventory {
   @Column()
   acronym_sector: string;
 
-  @Column()
-  tag: string;
-
-  @Column()
-  state_of_conservation: string;
+  @Column({
+    type: 'jsonb',
+    array: false,
+    default: () => " '[]' ",
+    nullable: false,
+  })
+  movable: Array<{ tag_number: string; conservation_status: string }>;
 
   @Column('timestamp with time zone')
   created_at: Date;
