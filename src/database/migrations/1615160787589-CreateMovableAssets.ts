@@ -11,7 +11,7 @@ export default class CreateMovableAssets1615160787589
             name: 'tag_number',
             type: 'varchar',
             isPrimary: true,
-            isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'description',
@@ -19,11 +19,11 @@ export default class CreateMovableAssets1615160787589
           },
           {
             name: 'acquisition_date',
-            type: 'timestamptz',
+            type: 'timestamp with time zone',
           },
           {
             name: 'incorporation_date',
-            type: 'timestamptz',
+            type: 'timestamp with time zone',
           },
           {
             name: 'value',
@@ -38,6 +38,15 @@ export default class CreateMovableAssets1615160787589
           {
             name: 'status_conservation',
             type: 'varchar',
+          },
+          {
+            name: 'warranty_date',
+            type: 'timestamp with time zone',
+          },
+          {
+            name: 'created_at',
+            type: 'timestamp with time zone',
+            default: 'now()',
           },
         ],
       }),
