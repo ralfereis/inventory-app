@@ -26,25 +26,49 @@ export default class CreateMovableAssets1615160787589
             type: 'timestamp with time zone',
           },
           {
-            name: 'value',
+            name: 'acquisition_value',
             type: 'decimal',
             precision: 10,
             scale: 2,
           },
           {
+            name: 'warranty_ends',
+            type: 'timestamp with time zone',
+            isNullable: true,
+          },
+          {
+            name: 'process_number',
+            type: 'varchar',
+            length: '19',
+            isNullable: true,
+          },
+          {
             name: 'commitment_note',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'status_conservation',
             type: 'varchar',
           },
           {
-            name: 'warranty_date',
-            type: 'timestamp with time zone',
+            name: 'situation',
+            type: 'varchar',
+            isNullable: true,
+          },
+          {
+            name: 'notation',
+            type: 'varchar',
+            length: '255',
+            isNullable: true,
           },
           {
             name: 'created_at',
+            type: 'timestamp with time zone',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
             type: 'timestamp with time zone',
             default: 'now()',
           },

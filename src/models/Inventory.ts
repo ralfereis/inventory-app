@@ -14,7 +14,11 @@ class Inventory {
     default: () => " '[]' ",
     nullable: false,
   })
-  movable: Array<{ tag_number: string; conservation_status: string }>;
+  movable: Array<{
+    tag_number: string;
+    conservation_status: string;
+    situation: string;
+  }>;
 
   @Column('timestamp with time zone')
   created_at: Date;

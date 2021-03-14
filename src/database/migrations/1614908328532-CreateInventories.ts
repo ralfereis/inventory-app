@@ -15,17 +15,28 @@ export default class CreateInventories1614908328532
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'acronym_sector',
+            name: 'department_abbreviation',
             type: 'varchar',
             isNullable: false,
-            length: '6',
+            length: '8',
           },
           {
-            name: 'movable',
+            name: 'employee_registration',
+            type: 'varchar',
+            isNullable: false,
+            length: '8',
+          },
+          {
+            name: 'asset_movables',
             type: 'jsonb',
           },
           {
             name: 'created_at',
+            type: 'timestamp with time zone',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
             type: 'timestamp with time zone',
             default: 'now()',
           },
