@@ -6,7 +6,10 @@ class Inventory {
   id: string;
 
   @Column()
-  acronym_sector: string;
+  department_acronym: string;
+
+  @Column()
+  employee_registration: string;
 
   @Column({
     type: 'jsonb',
@@ -14,7 +17,7 @@ class Inventory {
     default: () => " '[]' ",
     nullable: false,
   })
-  movable: Array<{
+  movables: Array<{
     tag_number: string;
     conservation_status: string;
     situation: string;

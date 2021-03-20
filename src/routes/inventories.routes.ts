@@ -15,13 +15,19 @@ inventoriesRouter.get('/', (request, response) => {
 
 inventoriesRouter.post('/', async (request, response) => {
   try {
-    const { acronym_sector, movable, created_at } = request.body;
+    const {
+      department_acronym,
+      employee_registration,
+      movables,
+      created_at,
+    } = request.body;
 
     const createInventory = new CreateInventoryService();
 
     const inventory = await createInventory.execute({
-      acronym_sector,
-      movable,
+      department_acronym,
+      employee_registration,
+      movables,
       created_at,
     });
     return response.json(inventory);
