@@ -2,3 +2,5 @@ node_modules/
 dist
 ormconfig.json
 .vscode
+app-inventory.pdf
+inventory-app-model.dmm
