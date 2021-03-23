@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateEmployees1616381843976
+export default class CreateDepartments1616468917165
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'employees',
+        name: 'departments',
         columns: [
           {
             name: 'id',
@@ -17,26 +17,22 @@ export default class CreateEmployees1616381843976
           {
             name: 'name',
             type: 'varchar',
-            length: '127',
+            length: '80',
           },
           {
-            name: 'registration',
+            name: 'acronym',
             type: 'varchar',
-            length: '11',
+            length: '9',
           },
           {
-            name: 'cpf',
+            name: 'email',
             type: 'varchar',
-            length: '11',
-          },
-          {
-            name: 'employee_type_id',
-            type: 'uuid',
-          },
-          {
-            name: 'employee_id',
-            type: 'uuid',
+            length: '35',
             isNullable: true,
+          },
+          {
+            name: 'responsible_id',
+            type: 'uuid',
           },
           {
             name: 'extension_phone',
@@ -44,15 +40,11 @@ export default class CreateEmployees1616381843976
             isNullable: true,
           },
           {
-            name: 'email',
-            type: 'varchar',
-            length: '40',
+            name: 'department_id',
+            type: 'uuid',
+            isNullable: true,
           },
-          {
-            name: 'situation',
-            type: 'varchar',
-            length: '7',
-          },
+
           {
             name: 'created_at',
             type: 'timestamp with time zone',
@@ -64,21 +56,20 @@ export default class CreateEmployees1616381843976
             default: 'now()',
           },
         ],
-
         foreignKeys: [
           {
-            name: 'FKEmployeesTypes',
-            referencedTableName: 'employees_types',
+            name: 'FKResponsible',
+            referencedTableName: 'employees',
             referencedColumnNames: ['id'],
-            columnNames: ['employee_type_id'],
+            columnNames: ['responsible_id'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
           {
-            name: 'FKEmployees',
-            referencedTableName: 'employees',
+            name: 'FKDepartments',
+            referencedTableName: 'departments',
             referencedColumnNames: ['id'],
-            columnNames: ['employee_id'],
+            columnNames: ['department_id'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
@@ -88,6 +79,6 @@ export default class CreateEmployees1616381843976
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('employees');
+    await queryRunner.dropTable('departments');
   }
 }
