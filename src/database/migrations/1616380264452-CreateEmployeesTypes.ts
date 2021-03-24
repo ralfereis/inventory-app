@@ -18,6 +18,7 @@ export default class CreateEmployeesTypes1616380264452
             name: 'description',
             type: 'varchar',
             length: '15',
+            isUnique: true,
           },
           {
             name: 'created_at',

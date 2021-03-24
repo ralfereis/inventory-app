@@ -18,11 +18,13 @@ export default class CreateDepartments1616468917165
             name: 'name',
             type: 'varchar',
             length: '80',
+            isUnique: true,
           },
           {
             name: 'acronym',
             type: 'varchar',
             length: '9',
+            isUnique: true,
           },
           {
             name: 'email',

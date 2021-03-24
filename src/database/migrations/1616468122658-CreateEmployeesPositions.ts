@@ -18,6 +18,7 @@ export default class CreateEmployeesPositions1616468122658
             name: 'description',
             type: 'varchar',
             length: '80',
+            isUnique: true,
           },
           {
             name: 'employee_id',

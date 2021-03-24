@@ -23,11 +23,13 @@ export default class CreateEmployees1616381843976
             name: 'registration',
             type: 'varchar',
             length: '11',
+            isUnique: true,
           },
           {
             name: 'cpf',
             type: 'varchar',
             length: '11',
+            isUnique: true,
           },
           {
             name: 'employee_type_id',
@@ -47,6 +49,7 @@ export default class CreateEmployees1616381843976
             name: 'email',
             type: 'varchar',
             length: '40',
+            isUnique: true,
           },
           {
             name: 'situation',
